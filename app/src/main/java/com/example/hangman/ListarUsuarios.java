@@ -118,6 +118,11 @@ public class ListarUsuarios extends AppCompatActivity {
         startActivity(it);
     }
 
+    public void jogar(MenuItem item){
+        Intent it = new Intent(this, Jogo.class);
+        startActivity(it);
+    }
+
     @Override
     public void onResume(){
         super.onResume();

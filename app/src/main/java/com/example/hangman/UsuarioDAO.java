@@ -39,4 +39,17 @@ public class UsuarioDAO {
         }
         return usuarios;
     }
+
+    public void excluir(Usuario u){
+        banco.delete("usuario", "id = ?", new String[]{u.getId().toString()});
+    }
+
+    public void atualizar(Usuario usuario){
+        ContentValues values = new ContentValues();
+        values.put("usuario", usuario.getUsuario());
+        values.put("idade", usuario.getIdade());
+        banco.update("usuario", values,
+                "id = ?", new String[]{usuario.getId().toString()});
+    }
+
 }
